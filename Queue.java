@@ -1,20 +1,20 @@
 package pack;
 
-public class Stack extends MyDoublyLinkedList<Integer> implements iStack {
+public class Queue extends MyDoublyLinkedList<Integer> implements iQueue {
 
 	@Override
-	public <T> void push(T data) {
+	public <T> void enqueue(T data) {
 		MyDoubleNode<Integer> thisNode = new MyDoubleNode<Integer>();
-		thisNode.Data = (Integer)data;
-		this.Prepend(thisNode.Data);
+		thisNode.Data = (Integer) data;
+		this.Append(thisNode.Data);
 	}
 
 	@Override
-	public <T> T pop() {
+	public <T> T dequeue() {
 		MyDoubleNode<Integer> thisNode = this.Head;
 		T result = (T)thisNode.Data;
 		this.Remove(thisNode.Data);
-		//will return null if there is nothing there, no need for conditional
+		
 		return result;
 	}
 
@@ -34,11 +34,11 @@ public class Stack extends MyDoublyLinkedList<Integer> implements iStack {
 
 	@Override
 	public int getLength() {
-		int count = 0;
 		MyDoubleNode<Integer> thisNode = this.Head;
+		int count = 0;
 		while(thisNode.NextNode != null) {
-			thisNode = thisNode.NextNode;
 			count++;
+			thisNode = thisNode.NextNode;
 		}
 		return count + 1;
 	}

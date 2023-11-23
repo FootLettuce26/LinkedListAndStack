@@ -50,6 +50,7 @@ public class Driver {
 		System.out.println("Did the number exist able to be removed? " + newList.Remove(7));
 		System.out.println("List after removal of items if possible: " + newList.Print());
 		System.out.println();
+		System.out.println();
 		
 		/*newList.Sort();
 		System.out.println("Sorted list: " + newList.Print());*/
@@ -82,6 +83,37 @@ public class Driver {
 		System.out.println();
 		
 		System.out.println("Length of stack: " + myStack.getLength());
+		System.out.println();
+		System.out.println();
+		
+		Queue myQueue = new Queue();
+		
+		myQueue.Append(18);
+		myQueue.Append(25);
+		myQueue.Append(3);
+		myQueue.Append(29);
+		myQueue.Append(46);
+		myQueue.Append(356);
+		myQueue.Append(17);
+		myQueue.Append(1828);
+		
+		myQueue.enqueue(22);
+		System.out.println("Enqueued queue: " + myQueue.Print());
+		System.out.println();
+		
+		myQueue.dequeue();
+		System.out.println("Dequeued queue: " + myQueue.Print());
+		System.out.println();
+		
+		resultNode = myQueue.peek();
+		System.out.println("Peek queue: " + resultNode.Data);
+		System.out.println();
+		
+		System.out.println("Queue empty? " + myQueue.isEmpty());
+		System.out.println();
+		
+		System.out.println("Length of queue: " + myQueue.getLength());
+		System.out.println();
 		System.out.println();
 	}
 	
